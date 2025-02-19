@@ -67,7 +67,7 @@ describe.only('POST Posts', () => {
     });
 
 // A resposta pode não conter o corpo JSON, mas podemos validar o status como 200 OK
-    describe.only('DELETE Post', () => {
+    describe('DELETE Post', () => {
       it('Deve excluir uma postagem existente', () => {
         cy.api('DELETE', 'https://jsonplaceholder.typicode.com/posts/1')
           .then((response) => {
