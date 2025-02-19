@@ -1,0 +1,110 @@
+# testeQA_DOT_cypress
+- Teste de Api  - pública: https://jsonplaceholder.typicode.com/posts
+
+## Pré-requisitos
+
+- Node.js (versão LTS recomendada)
+- NPM (geralmente instalado junto com o Node.js)
+
+## Instalação
+
+1. Clone o repositório:
+
+    ```bash
+    git clone https://github.com/andersonsoares12/testeQA_DOT.git
+    ```
+
+2. Instale as dependências do projeto:
+
+    ```bash
+    npm install
+    ```
+
+3. Instale o Cypress:
+
+    ```bash
+    npm install cypress --save-dev
+    ```
+
+4. Inicie o Cypress para criar a estrutura de diretórios:
+
+    ```bash
+    npx cypress open
+    ```
+
+## pluin do cypress que facilita a visualização do retorno 
+npm i cypress-plugin-api
+
+
+
+## Critérios de Aceite
+
+### Criação de Postagem
+
+- **Quando** o usuário envia uma solicitação POST com os dados da postagem, a API deve criar uma nova postagem e retornar um status 201.
+- A nova postagem deve conter um ID gerado automaticamente pela API.
+
+### Atualização de Postagem
+
+- **Quando** o usuário envia uma solicitação PUT com os dados atualizados, a API deve atualizar a postagem existente e retornar um status 200.
+- A postagem atualizada deve refletir as mudanças nos campos enviados.
+
+### Exclusão de Postagem
+
+- **Quando** o usuário envia uma solicitação DELETE para um ID de postagem específico, a API deve retornar um status 200, indicando que a postagem foi excluída (falsificada).
+
+### Filtragem de Postagens
+
+- **Quando** o usuário envia uma solicitação GET com parâmetros de consulta (ex: `userId`), a API deve retornar as postagens que correspondem aos parâmetros de consulta e um status 200.
+
+### Listagem de Comentários Aninhados
+
+- **Quando** o usuário envia uma solicitação GET para listar os comentários de uma postagem específica, a API deve retornar os comentários aninhados e um status 200.
+
+## Casos de Teste
+
+### Criação de Postagem
+
+**Teste de Sucesso para Criação de Postagem**
+
+- **Dado** que eu tenho os dados da postagem
+- **Quando** eu enviar uma solicitação POST para a API
+- **Então** a API deve criar uma nova postagem com um ID único e retornar um status 201
+
+### Atualização de Postagem
+
+**Teste de Sucesso para Atualização de Postagem**
+
+- **Dado** que eu tenho os dados atualizados da postagem
+- **Quando** eu enviar uma solicitação PUT para a API com o ID da postagem
+- **Então** a API deve atualizar a postagem existente e retornar um status 200
+
+**Teste para Atualizar Apenas o Título da Postagem**
+
+- **Dado** que eu quero atualizar apenas o título de uma postagem
+- **Quando** eu enviar uma solicitação PUT com o novo título e o ID da postagem
+- **Então** a API deve atualizar apenas o título e retornar um status 200
+
+### Exclusão de Postagem
+
+**Teste de Sucesso para Exclusão de Postagem**
+
+- **Dado** que eu tenho o ID de uma postagem existente
+- **Quando** eu enviar uma solicitação DELETE para a API
+- **Então** a API deve retornar um status 200
+
+### Filtragem de Postagens
+
+**Teste de Sucesso para Filtragem de Postagens por UserID**
+
+- **Dado** que eu tenho um `userId` específico
+- **Quando** eu enviar uma solicitação GET com o parâmetro `userId` para a API
+- **Então** a API deve retornar as postagens associadas ao `userId` e um status 200
+
+### Listagem de Comentários Aninhados
+
+**Teste de Sucesso para Listagem de Comentários Aninhados**
+
+- **Dado** que eu tenho o ID de uma postagem
+- **Quando** eu enviar uma solicitação GET para listar os comentários da postagem
+- **Então** a API deve retornar os comentários aninhados e um status 200

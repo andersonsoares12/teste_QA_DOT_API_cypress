@@ -1,0 +1,26 @@
+{
+  "name": "teste_api_cypress",
+  "version": "1.0.0",
+  "description": "Teste de api com cypress para fins de estudos.",
+  "homepage": "https://github.com/andersonsoares12/teste_QA_DOT_API_cypress#readme",
+  "bugs": {
+    "url": "https://github.com/andersonsoares12/teste_QA_DOT_API_cypress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andersonsoares12/teste_QA_DOT_API_cypress.git"
+  },
+  "license": "ISC",
+  "author": "Anderson Soares",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^14.0.3"
+  },
+  "dependencies": {
+    "cypress-plugin-api": "^2.11.2"
+  }
+}

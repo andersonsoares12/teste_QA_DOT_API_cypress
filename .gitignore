@@ -1,0 +1,19 @@
+# Ignorar a pasta node_modules
+node_modules/
+
+# Ignorar os diretórios de relatórios do Cypress
+cypress/reports/
+
+# Ignorar arquivos de logs
+*.log
+
+# Ignorar arquivos de sistema do macOS
+.DS_Store
+
+# Ignorar arquivos de cache do npm
+.npm
+
+# Ignorar pasta de saída do Cypress
+cypress/screenshots/
+cypress/reports/
+cypress/videos/
